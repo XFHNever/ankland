@@ -1,0 +1,7 @@
+target/
+ *.releaseBackup
+*.iml
+mockFile
+.idea/
+node_modules
+
