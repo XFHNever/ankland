@@ -1,0 +1,41 @@
+body{
+    background: #EDEEEF repeat left top;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #333333;
+}
+.header {
+    height: 100px;
+}
+.header .logo {
+}
+.header .logo img {
+    margin: 10px 0;
+    height: 80px;
+}
+.header .title {
+    margin: 35px 0 0 10px;
+    color: #e38d13;
+    font-weight: bold;
+}
+.header .title h1{
+    margin-bottom: 0;
+}
+.header .desc{
+    margin: 0px 0 0 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.header .desc h5{
+    margin: 0px;
+    font-weight: bold;
+}
+
+.menu {
+    font-size: 15px;
+    margin: 10px 0 5px 0;
+}
+.navbar-red {
+    background-color: #DD252E;
+    border-color: #DD252E;
+}

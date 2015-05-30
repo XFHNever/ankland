@@ -1,5 +1,5 @@
 (function(window, $, undefined){
-    var goodService = {
+    var contactService = {
         attachEvents: function attachEvents(){
 
         },
@@ -8,6 +8,6 @@
         }
     };
 
-    goodService.init();
+    contactService.init();
 
 }(window || this, jQuery, undefined));
