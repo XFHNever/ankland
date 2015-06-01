@@ -39,3 +39,16 @@ body{
     background-color: #DD252E;
     border-color: #DD252E;
 }
+.footer{
+    border-top: solid 2px #000000;
+}
+.footer .content {
+    margin: 3px auto;
+    width: 400px;
+}
+.footer .copyright{
+
+}
+.footer .sitemap{
+     margin: 0 10px;
+}
