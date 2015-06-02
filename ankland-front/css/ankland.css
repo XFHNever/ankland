@@ -1,0 +1,82 @@
+.promote {
+
+}
+.full-width{
+    width: 100%;
+}
+.content {
+
+}
+.content-left {
+    background: #E3E3E3;
+    width: 25%;
+}
+.content-left .title{
+    background:url("../img/ankland-left-title.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 32px;
+    font-size: 12px;
+    padding: 8px 5px;
+    color: #ffffff;
+    font-weight: bold;
+}
+.content-right {
+
+}
+.content-right .title {
+
+}
+.product-catalog {
+
+}
+.product-catalog content {
+}
+.product-catalog ul {
+    list-style: none;
+    padding-bottom: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.product-catalog li {
+    height: 26px;
+    line-height: 26px;
+    border-bottom: 1px solid #B7B7B7;
+}
+li.catalog {
+    padding-left: 12px;
+    font-weight: bold;
+}
+li.product {
+    padding-left: 24px;
+    background: url("../img/ankland-arrow.jpg") no-repeat 10px;
+}
+
+.retail {
+
+}
+.retail .content{
+    text-align: center;
+    background: #ffffff;
+    margin: 0px auto;
+}
+.retail img{
+    margin: 5px auto;
+}
+.contact {
+
+}
+.contact .content {
+    padding: 10px 0 5px 0;
+    margin: 5px 0px 5px 10px;
+    font-size: 13px;
+}
+.about {
+
+}
+.product-show {
+
+}

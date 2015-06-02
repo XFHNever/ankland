@@ -1,8 +1,20 @@
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
 body{
     background: #EDEEEF repeat left top;
     font-family: Arial, sans-serif;
     font-size: 12px;
     color: #333333;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+a:hover{
+    color: #333;
 }
 .header {
     height: 100px;
@@ -33,7 +45,7 @@ body{
 
 .menu {
     font-size: 15px;
-    margin: 10px 0 5px 0;
+    margin: 10px 0 0px 0;
 }
 .navbar-red {
     background-color: #DD252E;
