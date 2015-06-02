@@ -24,10 +24,23 @@
     font-weight: bold;
 }
 .content-right {
-
+    margin-left: 1px;
+    background: #ffffff;
+    width: 74%;
 }
 .content-right .title {
-
+    background: #5e5e5e;
+    color: #ffffff;
+    height: 32px;
+    font-size: 15px;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+.content-right a.more {
+    font-size: 13px;
+    font-weight: normal;
+    color: #ffffff;
 }
 .product-catalog {
 
@@ -77,6 +90,12 @@ li.product {
 .about {
 
 }
+.about .content{
+
+}
 .product-show {
+
+}
+.product-show .content{
 
 }
