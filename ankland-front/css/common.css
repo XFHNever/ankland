@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('fonts/glyphicons-halflings-regular.eot');
+    src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+body{
+    background: #EDEEEF repeat left top;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #333333;
+}
+.header {
+    height: 100px;
+}
+.header .logo {
+}
+.header .logo img {
+    margin: 10px 0;
+    height: 80px;
+}
+.header .title {
+    margin: 35px 0 0 10px;
+    color: #e38d13;
+    font-weight: bold;
+}
+.header .title h1{
+    margin-bottom: 0;
+}
+.header .desc{
+    margin: 0px 0 0 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.header .desc h5{
+    margin: 0px;
+    font-weight: bold;
+}
+
+.menu {
+    font-size: 15px;
+    margin: 0px 0 -10px 0;
+}
+.navbar-red {
+    background-color: #DD252E;
+    border-color: #DD252E;
+}
+.footer{
+    border-top: solid 2px #000000;
+}
+.footer .content {
+    margin: 3px auto;
+    width: 400px;
+}
+.footer .copyright{
+
+}
+.footer .sitemap{
+     margin: 0 10px;
+}
+
+.content {
+
+}
+.content-left {
+    background: #E3E3E3;
+    width: 25%;
+}
+.content-left .title{
+    background:url("../img/ankland-left-title.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 32px;
+    font-size: 12px;
+    padding: 8px 5px;
+    color: #ffffff;
+    font-weight: bold;
+}
+.content-left a {
+    color: #333;
+    text-decoration: none;
+}
+.content-left a:hover{
+    color: #333;
+}
+.content-right {
+    margin-left: 1px;
+    background: #ffffff;
+    width: 74%;
+}
+.product-catalog {
+
+}
+.product-catalog content {
+}
+.product-catalog ul {
+    list-style: none;
+    padding-bottom: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.product-catalog li {
+    height: 26px;
+    line-height: 26px;
+    border-bottom: 1px solid #B7B7B7;
+}
+li.catalog {
+    padding-left: 12px;
+    font-weight: bold;
+}
+li.product {
+    padding-left: 24px;
+    background: url("../img/ankland-arrow.jpg") no-repeat 10px;
+}
+
+.retail {
+
+}
+.retail .content{
+    text-align: center;
+    background: #ffffff;
+    margin: 0px auto;
+}
+.retail img{
+    margin: 5px auto;
+}
+.contact {
+
+}
+.contact .content {
+    padding: 10px 0 5px 0;
+    margin: 5px 0px 5px 10px;
+    font-size: 13px;
+}
