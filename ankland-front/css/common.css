@@ -20,7 +20,7 @@ body{
 }
 .header .title {
     margin: 35px 0 0 10px;
-    color: #e38d13;
+    color: #FF6600;
     font-weight: bold;
 }
 .header .title h1{
@@ -52,10 +52,13 @@ body{
     width: 400px;
 }
 .footer .copyright{
-
+    margin: 0 10px;
 }
 .footer .sitemap{
-     margin: 0 10px;
+    margin: 0 0 0 30px;
+}
+.footer .sitemap a{
+    color: #000000;
 }
 
 .content {
