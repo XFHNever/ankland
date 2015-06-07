@@ -352,3 +352,21 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+.line {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.create {
+    margin: 28px 3px 0 0;
+}
+
+.table-info {
+    margin-left: 30px;
+}
+.table-edit{
+    margin-left: 5px;
+}
+.table-delete{
+    margin-left: 5px;
+}
