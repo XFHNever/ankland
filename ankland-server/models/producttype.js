@@ -8,6 +8,7 @@ var ProductTypeSchema = new Schema({
     name: String,
     desc: String,
     order: {type: Number, default: 0},
+    state: {type: Number, default: 0},
     products: Array,
     create_at: String,
     modify_at: String

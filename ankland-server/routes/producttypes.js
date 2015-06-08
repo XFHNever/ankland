@@ -21,6 +21,7 @@ router.route('/')
         productType.name = req.body.name;
         productType.desc = req.body.desc;
         productType.order = req.body.order;
+        productType.state = req.body.state;
 
         productType.save(function(err, type) {
             if(err) {
@@ -42,7 +43,7 @@ router.route('/:type_id')
     })
     .put(function(req, res) {
         ProductType.findByIdAndUpdate(req.params.type_id, {name: req.body.name,desc: req.body.desc, order: req.body.order,
-            modify_at: Date.now()}, function(err, productType) {
+            state: req.body.state, modify_at: Date.now()}, function(err, productType) {
             if(err) {
                 res.send(err);
             }
