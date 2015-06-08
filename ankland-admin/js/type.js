@@ -1,4 +1,7 @@
 (function(window, $, undefined){
+    var global = {
+        host: 'http://106.187.99.225:5000/types'
+    };
     var typeService = {
         attachEvents: function attachEvents(){
             $('#typeTable').DataTable({
@@ -32,8 +35,28 @@
                     });
                 });
         },
+        getTypes: function getTypes() {
+            $.ajax({
+                url: global.host,
+                type: 'get',
+                ataType : "json",
+                success: function(types) {
+                    if(types != null) {
+                        var length = types.length;
+                        var innerHtml = '';
+
+                        for(var i=0; i<length; i++) {
+                        }
+
+                    }
+
+                    $('tbody').html("tttt");
+                }
+            });
+        },
         init: function(){
             this.attachEvents();
+            this.getTypes();
         }
     };
 
