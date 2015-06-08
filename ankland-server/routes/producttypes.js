@@ -31,6 +31,15 @@ router.route('/')
     });
 
 router.route('/:type_id')
+    .get(function(req, res) {
+        ProductType.findById(req.params.type_id, function(err, type) {
+            if(err) {
+                res.send(err);
+            }
+
+            res.json(type);
+        });
+    })
     .put(function(req, res) {
         ProductType.findByIdAndUpdate(req.params.type_id, {name: req.body.name,desc: req.body.desc, order: req.body.order,
             modify_at: Date.now()}, function(err, productType) {
