@@ -1,6 +1,11 @@
 (function(window, $, undefined){
     var global = {
-        host: 'http://106.187.99.225:5000/types/'
+        host: 'http://106.187.99.225:5000/types/',
+        states: {
+            0: '下线',
+            1: '上线'
+        }
+
     };
     var typeService = {
         attachEvents: function attachEvents(){
@@ -36,6 +41,7 @@
                     var name = $createModel.find('input[name=name]').val();
                     var desc = $createModel.find('textarea[name=desc]').val();
                     var order = $createModel.find('input[name=order]').val();
+                    var state = $createModel.find('select[name=state]').val();
 
                     if (name === '' || desc === '' || order === '') {
                         var $alert = $createModel.find('.alert-danger');
@@ -44,7 +50,7 @@
                             $alert.addClass('hidden');
                         }, 500);
                     } else {
-                        typeService.createType(name, desc, order);
+                        typeService.createType(name, desc, order, state);
                     }
 
                 });
@@ -54,6 +60,7 @@
                 var name = $updateModel.find('input[name=name]').val();
                 var desc = $updateModel.find('textarea[name=desc]').val();
                 var order = $updateModel.find('input[name=order]').val();
+                var state = $updateModel.find('select[name=state]').val();
 
                 if (name === '' || desc === '' || order === '') {
                     var $alert = $updateModel.find('.alert-danger');
@@ -62,7 +69,7 @@
                         $alert.addClass('hidden');
                     }, 500);
                 } else {
-                    typeService.updateType($updateModel.find('input[name=id]').val(), name, desc, order);
+                    typeService.updateType($updateModel.find('input[name=id]').val(), name, desc, order, state);
                 }
             });
 
@@ -91,6 +98,7 @@
                             '<td>' + types[i].name + '</td>' +
                             '<td>' + types[i].desc + '</td>' +
                             '<td>' + types[i].order + '</td>' +
+                            '<td>' + global.states[types[i].state] + '</td>' +
                             '<td type_id="' + types[i]._id + '"><a class="fa fa-info-circle table-info"></a><a class="fa fa-edit table-edit"></a><a class="fa fa-times table-delete"></a></td>';
                         }
 
@@ -99,12 +107,12 @@
                 }
             });
         },
-        createType: function createType(name, desc, order) {
+        createType: function createType(name, desc, order, state) {
             $.ajax({
                 url: global.host,
                 type: 'post',
                 dataType : "json",
-                data: {name: name, desc: desc, order: order},
+                data: {name: name, desc: desc, order: order, state: state},
                 success: function(bug) {
                     if(bug != null) {
                         setTimeout(function() {
@@ -127,6 +135,7 @@
                         $view.find('input[name=name]').val(type.name);
                         $view.find('textarea[name=desc]').html(type.desc);
                         $view.find('input[name=order]').val(type.order);
+                        $view.find('select[name=state]').val(type.state);
 
                         $view.modal({
                             backdrop: 'static'
@@ -135,12 +144,12 @@
                 }
             });
         },
-        updateType: function updateType(id, name, desc, order) {
+        updateType: function updateType(id, name, desc, order, state) {
             $.ajax({
                 url: global.host + id,
                 type: 'put',
                 dataType : "json",
-                data: {name: name, desc: desc, order: order},
+                data: {name: name, desc: desc, order: order, state: state},
                 success: function(type) {
                     if(type != null) {
                         setTimeout(function() {
