@@ -17,20 +17,14 @@
 
             $('tbody')
                 .on("click", 'a.table-info', function() {
-                    typeService.getSpecificType($(this).parent().attr("type_id"));
-                    //var $infoModel = $('#infoModel');
-                    //$infoModel.modal({
-                    //    backdrop: 'static'
-                    //});
+                    typeService.getSpecificType($(this).parent().attr("type_id"), $('#infoModel'));
                 })
                 .on("click", 'a.table-edit', function() {
-                    var $updateModel = $('#updateModel');
-                    $updateModel.modal({
-                        backdrop: 'static'
-                    });
+                    typeService.getSpecificType($(this).parent().attr("type_id"), $('#updateModel'));
                 })
                 .on("click", 'a.table-delete', function() {
                     var $deleteModel = $('#deleteModel');
+                    $deleteModel.find('input[name=id]').val($(this).parent().attr("type_id"));
                     $deleteModel.modal({
                         backdrop: 'static'
                     });
@@ -54,6 +48,27 @@
                     }
 
                 });
+
+            $('#updateModel').on('click', '.btn-right', function() {
+                var $updateModel = $(this).parents('#updateModel');
+                var name = $updateModel.find('input[name=name]').val();
+                var desc = $updateModel.find('textarea[name=desc]').val();
+                var order = $updateModel.find('input[name=order]').val();
+
+                if (name === '' || desc === '' || order === '') {
+                    var $alert = $updateModel.find('.alert-danger');
+                    $alert.removeClass('hidden');
+                    setTimeout(function() {
+                        $alert.addClass('hidden');
+                    }, 500);
+                } else {
+                    typeService.updateType($updateModel.find('input[name=id]').val(), name, desc, order);
+                }
+            });
+
+            $('#deleteModel').on('click', '.btn-right', function() {
+                typeService.deleteType($(this).parents('#deleteModel').find('input[name=id]').val());
+            });
         },
         getTypes: function getTypes() {
             $.ajax({
@@ -101,23 +116,54 @@
                 }
             });
         },
-        getSpecificType: function getSpecificType(id) {
+        getSpecificType: function getSpecificType(id, $view) {
             $.ajax({
                 url: global.host + id,
                 type: 'get',
                 dataType : "json",
                 success: function(type) {
                     if(type != null) {
-                        var $infoModal = $('#infoModel');
+                        $view.find('input[name=id]').val(id);
+                        $view.find('input[name=name]').val(type.name);
+                        $view.find('textarea[name=desc]').html(type.desc);
+                        $view.find('input[name=order]').val(type.order);
 
-                        $infoModal.find('input[name=id]').val(type._id);
-                        $infoModal.find('input[name=name]').html(type.name);
-                        $infoModal.find('textarea[name=desc]').html(type.desc);
-                        $infoModal.find('input[name=order]').html(type.order);
-
-                        $infoModal.modal({
+                        $view.modal({
                             backdrop: 'static'
                         });
+                    }
+                }
+            });
+        },
+        updateType: function updateType(id, name, desc, order) {
+            $.ajax({
+                url: global.host + id,
+                type: 'put',
+                dataType : "json",
+                data: {name: name, desc: desc, order: order},
+                success: function(type) {
+                    if(type != null) {
+                        setTimeout(function() {
+                            $('#updateModel').modal('hide');
+                        }, 500);
+
+                        typeService.getTypes();
+                    }
+                }
+            });
+        },
+        deleteType: function deleteType(id) {
+            $.ajax({
+                url: global.host + id,
+                type: 'delete',
+                dataType : "json",
+                success: function(result) {
+                    if(result.message != null) {
+                        setTimeout(function() {
+                            $('#deleteModel').modal('hide');
+                        }, 500);
+
+                        typeService.getTypes();
                     }
                 }
             });
