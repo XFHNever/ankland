@@ -20,8 +20,8 @@
                     });
                 })
                 .on("click", 'a.table-edit', function() {
-                    var $editModel = $('#editModel');
-                    $editModel.modal({
+                    var $updateModel = $('#updateModel');
+                    $updateModel.modal({
                         backdrop: 'static'
                     });
                 })
