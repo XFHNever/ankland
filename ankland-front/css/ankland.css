@@ -45,6 +45,15 @@
 .product-list .items{
 
 }
+.product-list .item{
+
+}
+.item .picture {
+
+}
+.item .name {
+
+}
 .product-list .breakline{
     height: 1px;
     border: dashed #777777 1px;

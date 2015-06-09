@@ -19,17 +19,21 @@ body{
     height: 80px;
 }
 .header .title {
-    margin: 35px 0 0 10px;
+    margin: 15px 0 0 10px;
     color: #FF6600;
     font-weight: bold;
 }
 .header .title h1{
+    font-size: 50px;
+    font-family: Traditional Arabic;
     margin-bottom: 0;
 }
 .header .desc{
     margin: 0px 0 0 10px;
-    font-size: 13px;
+    font-size: 11px;
+    font-family: Traditional Arabic;
     font-weight: bold;
+    color: purple;
 }
 .header .desc h5{
     margin: 0px;
@@ -136,4 +140,23 @@ li.product {
     padding: 10px 0 5px 0;
     margin: 5px 0px 5px 10px;
     font-size: 13px;
+}
+
+.menu li {
+    font-family: Traditional Arabic;
+}
+
+.content-right h3 {
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid #B7B7B7;
+    color: #818181;
+    height: 34px;
+    line-height: 50px;
+    margin-top: 0px;
+}
+.content-right h3 a {
+    border-bottom: 2px solid #CC0000;
+    color: #333;
+    text-decoration: none;
 }
