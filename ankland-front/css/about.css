@@ -1,0 +1,15 @@
+.desc {
+    line-height: 200%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    margin: 0px 10px;
+}
+.desc h1 {
+    color: #00aeef;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.desc span {
+    font-family: Verdana;
+    font-size: 15px;
+}
